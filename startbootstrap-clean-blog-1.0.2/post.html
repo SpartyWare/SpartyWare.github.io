@@ -78,41 +78,52 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <h1>Dropbox:</h1>
                     <h2 class="subheading"> Sustaining Millions of File Per Day</h2>
-                    <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
-
-                    <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
-
-                    <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
-
-                    <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
-
-                    <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+                    <p>Dropbox was founded in June of 2007 by Drew Houston and Arash Ferdowsi and is now headquartered in San Francisco, CA with a rough estimate of 110 employees. With over 50 million users, one million files saved every 3 minutes, and 500 million files saved daily; Dropbox has to have a reliable strong technology stack to support the mass amount of traffic everyday. </p>
 
                     <h2 class="section-heading">Software Choice:</h2>
 
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                    <p>When it comes to the language the software is written in, 99% of the code was written through Python. By using Python, Dropbox was able to scale up to 40 million users without writing thousands of lines of C code. Similar to the idea YouTube originally had with Python, the development speed benefits from using Python can largely outweigh the additional processing time and server cost for a company starting out. Yet in the past year of two, Dropbox has been feeling the cost of using Python heavily throughout their product. As a response, roughly in 2013 Dropbox started to migrate their performance critical backends form Python to Go to leverage faster execution speeds and better concurrency support. </p>
 
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                    <p>In the process of moving to Go, Dropbox ended up creating new libraries for Go considering its infancy as a language, and made all the libraries open source. The libraries include: caching, errors, database/sqlbuilder, memcache, net2, and hash2. (Patrick Lee) With this step forward in performance, Dropbox tends to continue to move legacy code to Go where performance gains can be made. </p>
 
-
-
-                    <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
 
                     <h2 class="section-heading">Database:</h2>
 
-                    <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+                    <p>For databases Dropbox used MySQL. Rajiv Eranki, an early Dropbox employee, worked on scaling the platform and said with the use of MySQL “Joins across databases had to be separated, and there was a lot of denormalization. Yet he would not have changed a thing.” (Mike Butcher) From this Dropbox was able to form benefits such as running queries on the users behaviors very easily, could do Joins across databases as they needed, and the structure allowed for fixes from bugs easily through queries in MySQL. Also with the setup, users who may have had large folders only had to make one query to the database. This in term translated into vast amount of flexibility for a growing company.</p>
 
                     <a href="#">
                         <img class="img-responsive" src="img/dropbox.jpg" alt="">
                     </a>
                     <span class="caption text-muted">Where ever you are, share with confidence and feel safe and secure doing it.</span>
-
-                    <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-                    <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+                    
                     <h2 class="section-heading">Storage/AWS:</h2>
+                    
+                    <p>From the beginning of Dropbox they have used Amazon Web Services (AWS) such as S3 and EC2. They ran a hybrid model that leveraged the EC2 and S3 along with co-location datacenter. For storage Dropbox uses S3, which is Amazons simple storage service with secure, durable, highly scalable object storage. Then for serving file blocks they use amazons EC2 that acts as a virtual computer for users to run their own applications on.</p>
+
                     <blockquote>You had me at secure storage.</blockquote>
+
                     <h2 class="section-heading">Front End Server:</h2>
+                    <p>Dropbox uses Nginx for a front-end server of their product. Nginx is an open source proxy and web server that is used for serving up static content super-fast. It uses less memory than Apache and does not have the same memory-related capacity issues as Apache. These are just some of the reason company’s like Dropbox, Netflix, Facebook, Hulu, Zappos, Zynga and more.</p>
+
+                    <p>According to Nginx, they include these features and more: </p>
+
+                    <ul>
+                      <li>Supports Memcache and WebSocket</li>
+                      <li>Provides edge caching and HTTP compression</li>
+                      <li>Provides SSL and SPDY acceleration</li>
+
+                      <li>Load Balancing</li>
+                      <li>On-the-fly configuration</li>
+                      <li>Remote syslog logging for security and performance monitoring</li>
+
+                      <li>• Video streaming of different formats</li>
+                      <li>Low memory footprint Web server</li>
+                      <li>Proxy for PHP, Ruby, Java (application servers), FastCGI, uWSGI, and HTTP (web) servers</li>
+                      <li>Export performance monitoring information in JSON format in real time</li>
+                    </ul>
+                    
+                    
+                    
                     <h2 class="section-heading">Additional Technology:</h2>
 
 
