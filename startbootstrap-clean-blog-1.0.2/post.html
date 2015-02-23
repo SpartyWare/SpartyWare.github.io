@@ -116,7 +116,7 @@
                       <li>On-the-fly configuration</li>
                       <li>Remote syslog logging for security and performance monitoring</li>
 
-                      <li>• Video streaming of different formats</li>
+                      <li>Video streaming of different formats</li>
                       <li>Low memory footprint Web server</li>
                       <li>Proxy for PHP, Ruby, Java (application servers), FastCGI, uWSGI, and HTTP (web) servers</li>
                       <li>Export performance monitoring information in JSON format in real time</li>
@@ -126,7 +126,18 @@
                     
                     <h2 class="section-heading">Additional Technology:</h2>
 
+                    <ul>
+                      <li>Paster/Pylons/Cheetah (web framework — minimal use beyond templating and handling form input)</li>
+                      <li>Memcached in front of the database and for handling inter-server coordination</li>
+                      <li>Ganglia for graphing, with drraw for custom graphs like the stack graph mentioned above/li>
 
+                      <li>Haproxy for load balancing to app servers, after Nginx (better configurability than Nginx’s balancing modules)</li>
+                      <li>Nagios for internal health checks</li>
+                      <li>Pingdom for external service monitoring and paging</li>
+
+                      <li>GeoIP for mapping IPs to locations</li>
+                      
+                    </ul>
 
                 </div>
             </div>
